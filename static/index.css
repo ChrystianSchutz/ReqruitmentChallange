@@ -1,0 +1,60 @@
+.form{
+    display: flex;
+    flex-direction: column;   
+    width: 300px;
+    align-items: center;
+    background: '#d3d3d3d';
+    background-color: rgba(211,211,211, 0.1);
+    margin: 0 auto;
+    border: 1px;
+    border-color: #d3d3dd;
+}
+
+button{
+    background: none;
+    width: 70px;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+input{
+    color: #d3d3d3;
+    background: none;
+    font-size: 18px;
+    padding: 10px 0px 10px 5px;
+    display: block;
+    border: none;
+        border-bottom-color: currentcolor;
+        border-bottom-style: none;
+        border-bottom-width: medium;
+    border-radius: 0;
+    border-bottom: 1px solid #d3d3d3;
+    width: 80px;
+}
+
+p{
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.note{
+    background-color: #d3d3d3;
+    border-radius: 4px;
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px;
+}
+
+.notes-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 5px;
+}
+
+.error{
+    margin: 5px;
+    padding: 5px;
+    color: red;
+}

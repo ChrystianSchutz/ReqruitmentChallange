@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const handleNoteWithdraw = require('../models/handleNoteWithdraw')
+const handleNotesWithdrawal = require('../models/handleNotesWithdrawal')
 
 
 router.post('/', (req, res) => {
-    const response = handleNoteWithdraw(req.body.sum)
+    const response = handleNotesWithdrawal(req.body.sum)
     if(response.error){
         return res.status(400).json(response)
     }
