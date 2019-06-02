@@ -12,26 +12,22 @@ class NoteWithdrawal extends React.Component {
         };
     }
     
-  handleChange = (event) => {
-    this.setState({value: event.target.value});
-  }
+    handleChange = (event) => {
+        this.setState({value: event.target.value});
+    }
 
 
-    onOkButtonClick = (event) => {
-    console.log(this.state.value)
-    axios.post('/api/', {
-        sum: this.state.value
-    })
-    .then((response) => {
-        this.setState({usedNotes: response.data.usedNotes, error: null})
-    })
-    .catch((error) => {
-        this.setState({usedNotes: [], error: error.response.data.error})
-    });
-
-      
-    event.preventDefault();
-  }
+    onOkButtonClick = () => {
+        axios.post('/api/', {
+            sum: this.state.value
+        })
+        .then((response) => {
+            this.setState({usedNotes: response.data.usedNotes, error: null})
+        })
+        .catch((error) => {
+            this.setState({usedNotes: [], error: error.response.data.error})
+        });
+    }
 
   render() {
     return(
@@ -48,12 +44,12 @@ class NoteWithdrawal extends React.Component {
                 <button onClick={this.onOkButtonClick}>
                     OK
                 </button>
-                    {this.state.usedNotes && <p>Used Notes:</p>}
+                    {this.state.usedNotes.length > 0 && <p>Used Notes:</p>}
                     <div className="notes-container">
                         {this.state.usedNotes.map((note) => <div className="note">{note}</div>)}
                     </div>
                 {
-                    this.state.error && <div className="error"> {this.state.error}</div>
+                    this.state.error && <div className="error">Error: {this.state.error}</div>
                 }
             </div>
         </React.Fragment>
